@@ -23,8 +23,9 @@ class App extends React.Component {
     console.log(year)
     for(let i = 1966; i < year; i++){
       axios.get("https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/12/schedule?season="+i).then(res => {
-        this.setState({data:[...this.state.data.flat(), res.data.events.flat()]})
+        this.setState({data:[...this.state.data.flat(), res.data.events.flat()]});
         console.log(this.state.data);
+        
     })
     }
     console.log(this.state.data)
